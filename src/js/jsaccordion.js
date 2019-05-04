@@ -1,22 +1,23 @@
 function JSAccordion(elementOrSelector) {
-    if(!(this instanceof JSAccordion))
+    if (!(this instanceof JSAccordion))
         return new JSAccordion(elementOrSelector);
 
     //  define public methods
-    this.test = function(color) {
-        this.targetElement.style.color = color;
-    };
+
+    this.init=function () {
+
+    }
 
     //  start construction operations
     //  if parameter is element selector
-    if(typeof elementOrSelector == 'string') {
+    if (typeof elementOrSelector == 'string') {
         this.targetElement = document.querySelector(elementOrSelector);
-        if(this.targetElement == null) {
+        if (this.targetElement == null) {
             throw ('invalid element selector');
         }
     }
     //  if parameter is element DOM object
-    else if(typeof elementOrSelector == 'object')
+    else if (typeof elementOrSelector == 'object')
         this.targetElement = elementOrSelector;
     else
         throw ('Unknown element type');
