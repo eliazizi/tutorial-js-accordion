@@ -3,17 +3,20 @@
 <head>
 	<link href="css/jsaccordion.css" rel="stylesheet">
 	<script src="./js/jsaccordion.js"></script>
+
+
+
 </head>
 <body>
 
-<div class="container">
-	<ul class="list">
-		<li class="list-item collapsed">
+<div id="container-one" >
+	<ul >
+		<li class=" collapsed">
 			<div class="header">
-				<span class="status-icon"></span>
+				<span class=""></span>
 					<h3>section #1 title</h3>
 			</div>
-			<div class="body">
+			<div class="">
 				<p>multi line text can put here<br>
 					it is not only for us. lorem ipsum dollor amore. or other text here<br>
 					i am here
@@ -24,7 +27,7 @@
 				</p>
 			</div>
 		</li>
-		<li class="list-item expanded">
+		<li class=" expanded">
 			<div class="header">
 				<span class="status-icon"></span>
 					<h3>section #2 title</h3>
@@ -46,7 +49,7 @@
 
 <p>thi is paragraph</p>
 
-<div class="container">
+<div id="container-two" class="container">
 	<ul class="list">
 		<li class="list-item collapsed">
 			<div class="header">
@@ -87,7 +90,13 @@
 
 
 
-
+<script>
+    var one=new JSAccordion("#container-one");
+    one.init();
+    /*var two=new JSAccordion("#container-two");
+    two.init();
+*/
+</script>
 
 </body>
 
