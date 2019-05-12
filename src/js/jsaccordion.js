@@ -5,23 +5,23 @@ function JSAccordion(elementOrSelector) {
     //  define public methods
 
     this.init=function () {
-        this.targetElement.classList.add('container');
+        this.targetElement.classList.add('jsac-container');
         var ul=this.targetElement.querySelector("ul");
-        ul.classList.add('list');
+        ul.classList.add('jsac-list');
         var all_li=ul.querySelectorAll('li');
         all_li.forEach(function (element) {
-            element.classList.add('list-item');
+            element.classList.add('jsac-list-item');
             var first_div=element.querySelector("div:first-child");
-            first_div.classList.add('header');
+            first_div.classList.add('jsac-header');
             var span=first_div.querySelector('span');
-            span.classList.add('status-icon');
+            span.classList.add('jsac-status-icon');
             var h=first_div.querySelector('h3');
-            h.classList.add('titl_h');
+            h.classList.add('jsac-titl-h');
             var second_div=element.querySelector("div:last-child");
-            second_div.classList.add('body');
+            second_div.classList.add('jsac-body');
             var all_p=second_div.querySelectorAll('p')
             all_p.forEach(function (element_two) {
-                element_two.classList.add('p_body');
+                element_two.classList.add('jsac-p-body');
 
             })
         });
