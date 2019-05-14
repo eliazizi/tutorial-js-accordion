@@ -1,0 +1,24 @@
+#container-one .jsac-title-h, #container-two .jsac-title-h {
+    background: #314151;
+    height: 40px;
+    width: 200px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+
+#container-one ul, #container-two ul {
+    list-style: none;
+}
+
+.expanded .jsac-body {
+    display: block;
+    opacity: 1;
+    transition: all 2s linear;
+}
+
+.collapsed .jsac-body {
+    display: none;
+
+    opacity: 0;
+}

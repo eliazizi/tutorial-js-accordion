@@ -4,23 +4,47 @@ function JSAccordion(elementOrSelector) {
 
     //  define public methods
 
-    this.init=function () {
+    this.init = function () {
         this.targetElement.classList.add('jsac-container');
-        var ulElement=this.targetElement.querySelector("ul");
+        var ulElement = this.targetElement.querySelector("ul");
         ulElement.classList.add('jsac-list');
-        var liElements=ulElement.querySelectorAll('li');
+        var liElements = ulElement.querySelectorAll('li');
         liElements.forEach(function (element) {
-            var headerDiv=element.querySelector("div:first-child");
-            var hTag=headerDiv.querySelector('h3');
-            var bodyDiv=element.querySelector("div:last-child");
+            var headerDiv = element.querySelector("div:first-child");
+            var hTag = headerDiv.querySelector('h3');
+            var bodyDiv = element.querySelector("div:last-child");
 
             element.classList.add('jsac-list-item');
             headerDiv.classList.add('jsac-header');
             hTag.classList.add('jsac-title-h');
             bodyDiv.classList.add('jsac-body');
+
+
+            //addEventListener
+
+            headerDiv.addEventListener("click", clickLI);
+
+
+             function changeExpandedToCollapsed () {
+                 var findExpandedClass = document.querySelectorAll('li.expanded');
+                 findExpandedClass.forEach(function (t) {
+                     t.classList.remove('expanded');
+                     t.classList.add('collapsed');
+
+                 })
+             }
+
+             changeExpandedToCollapsed();
+             function clickLI(e) {
+                 changeExpandedToCollapsed();
+                 e.currentTarget.parentNode.classList.remove('collapsed');
+                 e.currentTarget.parentNode.classList.add('expanded');
+
+
+             }
+
+
         });
-
-
 
     }
 
