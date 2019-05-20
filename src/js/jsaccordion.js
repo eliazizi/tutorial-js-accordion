@@ -23,25 +23,29 @@ function JSAccordion(elementOrSelector) {
             //addEventListener
 
             headerDiv.addEventListener("click", clickLI);
+            var findExpandedClass = document.querySelectorAll('li');
+            findExpandedClass.forEach(function (t) {
+                t.classList.remove('expanded');
+                t.classList.add('collapsed');
+
+            });
 
 
-             function changeExpandedToCollapsed () {
-                 var findExpandedClass = document.querySelectorAll('li.expanded');
-                 findExpandedClass.forEach(function (t) {
-                     t.classList.remove('expanded');
-                     t.classList.add('collapsed');
+            function clickLI(e) {
 
-                 })
-             }
+                if (e.currentTarget.parentNode.classList.contains('expanded')) {
+                    e.currentTarget.parentNode.classList.remove('expanded');
+                    e.currentTarget.parentNode.classList.add('collapsed');
 
-             changeExpandedToCollapsed();
-             function clickLI(e) {
-                 changeExpandedToCollapsed();
-                 e.currentTarget.parentNode.classList.remove('collapsed');
-                 e.currentTarget.parentNode.classList.add('expanded');
+                } else if (e.currentTarget.parentNode.classList.contains('collapsed')) {
+                    e.currentTarget.parentNode.classList.remove('collapsed');
+                    e.currentTarget.parentNode.classList.add('expanded');
 
-
-             }
+                } else {
+                    e.currentTarget.parentNode.classList.add('expanded');
+                    e.currentTarget.parentNode.classList.remove('collapsed');
+                }
+            }
 
 
         });
